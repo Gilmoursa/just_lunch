@@ -44,17 +44,22 @@ class User < ActiveRecord::Base
 
   private
 
+  def self.sort_array_by(user_array, attribute)
+    user_array.sort_by do |user|
+      user.availabilities.first.send(attribute)
+    end
+  end
+
   def self.time_filter(user_array)
-    # returned a has of time as key pointing to an array of objects with that time
-    
-    user_array.chunk do |user|
+    sorted_array = self.sort_array_by(user_array, 'time')
+    sorted_array.chunk do |user|
       user.availabilities.first.time
     end.to_h.values
   end
 
   def self.location_filter(user_array)
-    
-    user_array.chunk do |user|
+    sorted_array = self.sort_array_by(user_array, 'location')
+    sorted_array.chunk do |user|
       user.availabilities.first.location
     end.to_h.values
   end
