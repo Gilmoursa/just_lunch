@@ -1,5 +1,5 @@
 <h1>Invitation</h1>
-<p>To: <%= @user.name %> </p>
+<h4>To: <%= @user.name %> </h4>
 
 <%= render partial: 'layouts/restaurant', locals: {restaurant: @restaurant, meeting: @meeting } %>
 
@@ -14,4 +14,4 @@
   <% end %>
 </div>
 
-<p><%= link_to 'Invitations', user_invitations_path(@user) %></p>
+<h3><%= link_to 'Invitations', user_invitations_path(@user) %></h3>
