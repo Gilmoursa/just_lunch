@@ -1,2 +1,5 @@
 <%= render partial: 'layouts/restaurant', locals: {restaurant: @restaurant, meeting: @meeting } %> 
+
+<p><%= link_to 'Add Review', edit_user_meeting_path(current_user, @meeting) %></p>
+
 <p><%= link_to 'Lunches', user_meetings_path(current_user) %></p>

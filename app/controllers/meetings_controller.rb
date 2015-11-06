@@ -10,11 +10,16 @@ class MeetingsController < ApplicationController
     @meetings = meetings.sort_by{|meeting| meeting.created_at}.reverse
   end
 
-  
-
   def show
      @user = User.find(params[:user_id])
      @meeting = Meeting.find(params[:id])
      @restaurant = Meeting.find(params[:id]).restaurant
+  end
+
+  def edit
+    user = User.find(params[:user_id])
+    @guest = user.guests.select do |guest| 
+      params[:id].to_i == guest.meeting_id
+    end.first
   end
 end
