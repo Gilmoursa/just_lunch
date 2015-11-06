@@ -22,6 +22,8 @@ class Meeting < ActiveRecord::Base
     self.restaurant = Restaurant.search
   end
 
+  def build_guests(invitation_meetings)
+
   def change_meeting_status(updated_invitation)
     invitation_meetings = Meeting.all.map(&:invitations).flatten.select{|invitation| invitation.meeting == updated_invitation.meeting}
     meeting = invitation_meetings.first.meeting
