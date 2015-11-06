@@ -15,5 +15,4 @@ class Availability < ActiveRecord::Base
 
   # Other aspects - interest (another class)
   # Cuisine (another class)
-
 end

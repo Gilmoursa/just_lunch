@@ -19,7 +19,7 @@ class Meeting < ActiveRecord::Base
   before_save :get_restaurant
 
   def get_restaurant
-    self.restaurant = Restaurant.search(self.location)
+    self.restaurant ||= Restaurant.search(self.location)
   end
   
   def build_guests(invitation_meetings)

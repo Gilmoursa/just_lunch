@@ -1,11 +1,11 @@
-<h1>Edit Availabilities</h1>
+<h1>Availabilities</h1>
 
-<%= form_for [@user, @availability] do |f| %>
+<%= form_for @availability, url: user_availability_index_path(@user) do |f| %>
   <%= f.label :time %><br>
   <%= f.text_field :time %><br>
   <%= f.label :location %><br>
   <%= f.text_field :location %><br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Save' %>
   </div>
 <% end %>

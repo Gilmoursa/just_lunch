@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   has_many :guests
   has_many :meetings, through: :invitations
   has_many :restaurants, through: :meetings
-  before_save :set_time_location, :set_photo
+  before_save :set_photo#, :set_time_location
   has_secure_password
   validates_presence_of :name, :email, :password_digest, :birthdate
   validates :email, uniqueness: true
@@ -27,9 +27,9 @@ class User < ActiveRecord::Base
     self.image ||= "http://api.randomuser.me/portraits/med/#{["men","women"].sample}/#{rand(1..35)}.jpg"
   end
 
-  def set_time_location
-    self.availabilities.build(time: "12", location:"10004") 
-  end
+  # def set_time_location
+  #   self.availabilities.build(time: "12", location:"10004") 
+  # end
 
   def accept_rate
     accepted = self.invitations.select{|invitation| invitation.status == 'Accept'}.count
@@ -45,6 +45,8 @@ class User < ActiveRecord::Base
   end
 
   private
+
+  ### Idea to make the mass invitation run faster would be to sort by every attribute just once.
 
   def self.sort_array_by(user_array, attribute)
     user_array.sort_by do |user|
@@ -67,7 +69,8 @@ class User < ActiveRecord::Base
   end
 
   def self.apply_filters
-    time_results = self.time_filter(User.all)
+    users = User.all.select{|user| user.availabilities.first && user.availabilities.first.time && user.availabilities.first.location }
+    time_results = self.time_filter(users)
     location_results = time_results.map do |time_result|
       self.location_filter(time_result)
     end.flatten(1)

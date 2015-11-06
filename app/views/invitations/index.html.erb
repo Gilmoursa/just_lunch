@@ -2,5 +2,6 @@
 <% @invitations.each do |invitation| %>
   <p>Invitation id: <%= link_to invitation.id, user_invitation_path(current_user, invitation) %></p>
   <p>Status: <%= invitation.status %></p>
+  <hr>
 <% end %>
   
