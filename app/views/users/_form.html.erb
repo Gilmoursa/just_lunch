@@ -17,7 +17,7 @@
     <%= f.label :email %><br>
     <%= f.text_field :email %><br>
     <%= f.label :birthdate %><br>
-    <%= f.date_select :birthdate %><br>
+    <%= f.date_select :birthdate, start_year: 1900, end_year: Date.today.year - 18 %><br>
     <%= f.label :password %><br>
     <%= f.password_field :password %><br>
     <%= f.label :password_confirmation %><br>

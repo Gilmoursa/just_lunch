@@ -1,0 +1,13 @@
+<h1>Edit Availabilities</h1>
+
+<%= form_for [@user, @availability] do |f| %>
+  <%= f.label :time %><br>
+  <%= f.text_field :time %><br>
+  <%= f.label :location %><br>
+  <%= f.text_field :location %><br>
+  <div class="actions">
+    <%= f.submit "Update"%>
+  </div>
+<% end %>
+
+

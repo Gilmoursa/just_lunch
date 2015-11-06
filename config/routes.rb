@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new, :create, :edit, :update, :destroy] do
     resources :meetings, only: [:index, :show, :edit, :destroy]
     resources :invitations, only: [:show, :new, :create, :destroy, :update, :index]
+    resources :availability, only: [:new, :create, :edit, :update, :show]
   end
 
   get '/signup', to: 'users#new', as: "signup"

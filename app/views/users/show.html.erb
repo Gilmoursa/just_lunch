@@ -16,7 +16,7 @@
     <%= link_to 'Edit Profile', edit_user_path(@user) %>
   </p>
   <p>
-    <%= link_to 'Edit Availability', construction_path %>
+    <%= link_to 'Edit Availability', edit_user_availability_path(@user, @user.availabilities.last) %>
   </p>
   </div>
 <% end %>
