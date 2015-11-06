@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   # get '/invitations', to: 'invitations#index', as: 'invitations'
   get '/admin', to: 'invitations#admin', as: 'admin'
   post '/invitations', to: 'invitations#create', as: 'create_invitations'
+  get '/construction', to: 'sessions#construction', as: 'construction'
 
   # resources :
 

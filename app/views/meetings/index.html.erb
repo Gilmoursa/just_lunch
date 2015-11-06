@@ -1,5 +1,9 @@
 <h1>Lunches</h1>
 
+<% if @meetings.count == 0 %>
+  <h4>Looks like you don't have any lunches...yet.</h4>
+<% end %>
+
 <% @meetings.each do |meeting| %>
   <h4><%= link_to meeting.created_at.strftime("%B %d, %Y"), user_meeting_path(current_user, meeting) %></h4>
   <div class="col-md-6">

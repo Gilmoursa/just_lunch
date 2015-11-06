@@ -8,6 +8,8 @@
 #  updated_at      :datetime         not null
 #  email           :string
 #  password_digest :string
+#  birthdate       :string
+#  image           :string
 #
 
 class User < ActiveRecord::Base
@@ -22,7 +24,7 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
 
   def set_photo
-    self.image = "http://api.randomuser.me/portraits/med/#{["men","women"].sample}/#{rand(1..35)}.jpg"
+    self.image ||= "http://api.randomuser.me/portraits/med/#{["men","women"].sample}/#{rand(1..35)}.jpg"
   end
 
   def set_time_location
