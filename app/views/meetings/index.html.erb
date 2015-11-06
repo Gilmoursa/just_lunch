@@ -1,14 +1,18 @@
+<h1>Lunches</h1>
+
 <% @meetings.each do |meeting| %>
+  <h4><%= link_to meeting.created_at.strftime("%B %d, %Y"), user_meeting_path(current_user, meeting) %></h4>
   <div class="col-md-6">
-    <img src=<%= meeting.restaurant.image %> width=200px
-    class="img-responsive">
+  <!-- <img src=image width=200px
+    class="img-responsive"> -->
+  <%= image_tag meeting.restaurant.image %>
   </div>
-  <div class="col-md-6 text-left">
-    <h2><%= link_to meeting.created_at.strftime("%B %d, %Y"), user_meeting_path(current_user, meeting) %></h2>
-    <h3><%= link_to meeting.restaurant.name, meeting.restaurant.url %><br>
-    Guest: <%= meeting.users.where.not(id: params[:user_id]).first.name%><br>
-    Time: <%= meeting.time %><br>
-    Status: <%= meeting.status %>
-    <% end %></h3>
-    <p></p>
+   <div class="col-md-6 text-left">
+  <p>
+  <%= link_to meeting.restaurant.name, meeting.restaurant.url %><br>
+  Guest: <%= meeting.users.where.not(id: params[:user_id]).first.name%><br>
+  Time: <%= meeting.time %><br>
+  Status: <%= meeting.status %>
+  </p>
   </div>
+<% end %>

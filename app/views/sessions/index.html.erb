@@ -1,10 +1,6 @@
-<h1 class="text">Just Lunch</h1>
-<br>
-<% if current_user %>
-        <img src=<%= current_user.image %>>
-      <h3 class="text">Welcome back <%= current_user.name %>!</h3>
-    <% else %>
-        <h3 class="text">Tired of Eating Alone?<br>
-      <%=link_to "Sign Up", signup_path %> and dine today</h3>
-    <% end %>
-<br>
+<% present(current_user, SessionPresenter) do |session_presenter| %>
+    <h1 class="text">Just Lunch</h1>
+    <br>
+    <%= session_presenter.homepage_text %>
+<% end %>
+
