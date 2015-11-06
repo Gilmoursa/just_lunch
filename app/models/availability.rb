@@ -13,4 +13,7 @@
 class Availability < ActiveRecord::Base
   belongs_to :user
 
+  # Other aspects - interest (another class)
+  # Cuisine (another class)
+
 end

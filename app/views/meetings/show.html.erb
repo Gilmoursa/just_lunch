@@ -1,3 +1,9 @@
+<% if @meeting.status == 'accepted' %>
+  <h4><%= @meeting.users[0].name %> <%= image_tag(@meeting.users[0].image, class: 'img-responsive', width: '60px') %></h4>
+  <h5>&</h5>
+  <h4><%= @meeting.users[1].name %> <%= image_tag(@meeting.users[1].image, class: 'img-responsive', width: '60px') %></h4>
+<% end %>
+
 <%= render partial: 'layouts/restaurant', locals: {restaurant: @restaurant, meeting: @meeting } %> 
 
 <p><%= link_to 'Add Review', construction_path %></p>

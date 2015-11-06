@@ -12,7 +12,9 @@
    <div class="col-md-6 text-left">
   <p>
   <%= link_to meeting.restaurant.name, meeting.restaurant.url %><br>
-  Guest: <%= meeting.users.where.not(id: params[:user_id]).first.name%><br>
+  <% if meeting.status == 'accepted' %>
+    Guest: <%= meeting.users.where.not(id: params[:user_id]).first.name%><br>
+  <% end %>
   Time: <%= meeting.time %><br>
   Status: <%= meeting.status %>
   </p>
