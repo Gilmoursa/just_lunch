@@ -1,17 +1,12 @@
-<h1><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Invitation</h1>
-<h4>To: <%= @user.name %> </h4>
+<% present @invitation do |invitation_presenter| %>
+  <h1><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Invitation</h1>
+  <h4>To: <%= @user.name %> </h4>
 
-<%= render partial: 'layouts/restaurant', locals: {restaurant: @restaurant, meeting: @meeting } %>
+  <%= render partial: 'layouts/restaurant', locals: {restaurant: @restaurant, meeting: @meeting } %>
 
-<div class="col-md-6 text-left">
-  <% if @invitation.status == 'pending' %>
-    <%= form_tag user_invitation_path(@user, @user.invitations.last), method: :patch do %>
-      <%= submit_tag 'Accept', name: :status %>
-      <%= submit_tag 'Decline', name: :status %>
-    <% end %>
-  <% else %>
-    You chosen to <%= @invitation.status.downcase %> this invitation.
-  <% end %>
-</div>
+  <div class="col-md-6 text-left">
+    <%= invitation_presenter.accept_decline %>
+  </div>
+<% end %>
 
 

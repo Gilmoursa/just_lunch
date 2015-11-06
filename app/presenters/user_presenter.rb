@@ -15,7 +15,7 @@ class UserPresenter < BasePresenter
   # <% end %>
   def pending_invitation
     if !new_user?
-      if user.invitations.last.status == "pending" && user.invitations.meeting.status == 'pending'
+      if user.invitations.last.status == "pending" && user.invitations.last.meeting.status == 'pending'
         h.link_to('Pending Invitation!', route.user_invitation_path(user, user.invitations.last))
       else
         meeting_status
