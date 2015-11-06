@@ -21,6 +21,14 @@ class Meeting < ActiveRecord::Base
   def get_restaurant
     self.restaurant = Restaurant.search
   end
+  
+  def build_guests(invitation_meetings)
+    invitation_meetings.each do |invitation|
+      guest = invitation.meeting.guests.build
+      guest.user_id = invitation.user_id
+      guest.save
+    end
+  end
 
   def change_meeting_status(updated_invitation)
     invitation_meetings = Meeting.all.map(&:invitations).flatten.select{|invitation| invitation.meeting == updated_invitation.meeting}
@@ -31,6 +39,7 @@ class Meeting < ActiveRecord::Base
       return
     else
       meeting.status='accepted'
+      self.build_guests(invitation_meetings)
     end
     meeting.save
   end
