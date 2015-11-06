@@ -1,13 +1,33 @@
+body {
+	padding-top: 50px;
+
+}
+#headerpic img {
+	border-radius: 100%;
+	width: 40px;
+	margin: 0 auto;
+}
+img{
+	margin: 0 auto;
+	border-radius: 100%;
+}
 .cover-image{
-	background-image: image-url('food-bg.jpg');
-  min-height: 1000%;
-  min-width: 100%;
+  background-image: image-url('food-bg.jpg');
+  height: 50em;
   width: 100%;
-  height: auto;
-  position: fixed;
-  top: 50;
+  top: 150px;
   left: 0;
 }
 .text-inverse{
 	color: white;
+}
+.btn-yellow {
+	margin: 0 auto !important;
+  background: rgb(250, 255, 140);
+  color: #574500;
+  border: none;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  padding: 20px 60px 20px 0px !important;
 }

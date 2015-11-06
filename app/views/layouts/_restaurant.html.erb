@@ -1,19 +1,13 @@
-<h1>Lunch</h1>
-<div class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <img src=<%= restaurant.image %> width=200px
-            class="img-responsive">
-          </div>
-          <div class="col-md-6">
-            <h1><%= link_to restaurant.name, restaurant.url %></h1>
+   <div class="col-md-6 text-left">
+    <img src=<%= restaurant.image %> width=200px
+    class="img-responsive">
+  </div>
+  <div class="col-md-6 text-left">
+    <h1><%= link_to restaurant.name, restaurant.url %></h1>
 	<h4><%= meeting.created_at.strftime("%B %d, %Y") %> at <%= meeting.time %>
 	Cuisine: <%= restaurant.food %><br>
 	Location: <%= restaurant.location %><br>
 	Phone: <%= number_to_phone(restaurant.phone, area_code: true) %><br>
 	Rating: <%= restaurant.rating %> out of 5.</h4>
-          </div>
-        </div>
-      </div>
-    </div>
+	<h3><%= link_to 'Lunches', user_meetings_path(current_user) %></h3>
+  </div>

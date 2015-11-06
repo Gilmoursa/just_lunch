@@ -1,22 +1,10 @@
-<div class="cover">
-      <div class="cover-image">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h1 class="text-inverse">Just Lunch</h1>
-
-            <br>
-            <% if current_user %>
-                    <img src=<%= current_user.image %>>
-                  <h3>Welcome back <%= current_user.name %>!</h3>
-                <% else %>
-                    <h3 class="text-inverse">Tired of Eating Alone?<br>
-                  <%=link_to "Sign Up", signup_path %> and dine today</h3>
-                <% end %>
-            <br>
-          </div>
-        </div>
-      </div>
-      <footer>.</footer>
-      </div>
-    </div>
+<h1 class="text">Just Lunch</h1>
+<br>
+<% if current_user %>
+        <img src=<%= current_user.image %>>
+      <h3 class="text">Welcome back <%= current_user.name %>!</h3>
+    <% else %>
+        <h3 class="text">Tired of Eating Alone?<br>
+      <%=link_to "Sign Up", signup_path %> and dine today</h3>
+    <% end %>
+<br>
