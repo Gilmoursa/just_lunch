@@ -33,7 +33,7 @@ class Invitation < ActiveRecord::Base
 
   def self.create_invitations
     self.select_pairs.each do |pair|
-      meeting = Meeting.new(status: "pending", time: pair[0].availabilities.first.time)
+      meeting = Meeting.new(status: "pending", time: pair[0].availabilities.first.time, location: pair[0].availabilities.first.location)
       meeting.save
       invite_one = Invitation.create(meeting: meeting, user: pair[0], status: "pending")
       invite_two = Invitation.create(meeting: meeting, user: pair[1], status: "pending")

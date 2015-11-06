@@ -17,8 +17,8 @@
 class Restaurant < ActiveRecord::Base
   has_many :meetings
 
-  def self.search
-    restaurant = Yelp.client.search("10004", {term: 'food'}).businesses.sample(1)
+  def self.search(zip_code)
+    restaurant = Yelp.client.search(zip_code, {term: 'food'}).businesses.sample(1)
     name = restaurant.first.name
     location = restaurant.first.location.display_address.join(', ')
     phone = restaurant.first.phone
