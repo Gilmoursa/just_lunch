@@ -14,4 +14,10 @@ class BasePresenter
     @template
   end
 
+  private
+
+  def route
+    Rails.application.routes.url_helpers
+  end
+
 end

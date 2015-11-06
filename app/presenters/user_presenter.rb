@@ -14,9 +14,9 @@ class UserPresenter < BasePresenter
   #   <% end %>
   # <% end %>
   def pending_invitation
-    if new_user?
+    if !new_user?
       if user.invitations.last.status == "pending"
-        h.link_to('Pending Invitation!', user_invitation_path(user, user.invitations.last))
+        h.link_to('Pending Invitation!', route.user_invitation_path(user, user.invitations.last))
       else
         meeting_status
       end
@@ -49,7 +49,7 @@ class UserPresenter < BasePresenter
     elsif user.meetings.last.status == "declined"
       h.content_tag(:p, "No pending invitations, please check back tomorrow.")
     else
-      h.link_to("Today's Lunch", user_meeting_path(user, user.meetings.last))
+      h.link_to("Today's Lunch", route.user_meeting_path(user, user.meetings.last))
     end
   end
 end

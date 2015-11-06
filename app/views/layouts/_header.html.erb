@@ -1,41 +1,21 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand">Just Lunch</a>
-    </div>
+<% present(current_user, SessionPresenter) do |session_presenter| %>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand">Just Lunch</a>
+        </div>
 
-
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-                    <% if current_user %>
-                    <li>
-                        <%=link_to "#{current_user.name.capitalize}'s Profile",user_path(current_user) %>
-                    </li>
-                    <li>
-                        <%=link_to "Log Out",logout_path %>
-                    </li>
-                    <li>
-                    <div id ="headerpic">
-                        <img src=<%= current_user.image %>>
-                        </div>
-                    </li>
-                    <% else %>
-                    <li>
-                        <%=link_to "Sign Up", signup_path %>
-                    </li>
-                    <li>
-                        <%=link_to "Log In", login_path %>
-                    </li>
-                    <% end %>
-      </ul>
-    </div>
-  </div>
-</nav>
-
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <%= session_presenter.nav_bar %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+<% end %>

@@ -1,7 +1,7 @@
-	<h1><%= link_to restaurant.name, restaurant.url %></h1>
-	<h4><%= meeting.created_at.strftime("%B %d, %Y") %> at <%= meeting.time %></h4>
-  <hr>
-	<img src=<%= restaurant.image %>>
+<h1><%= link_to restaurant.name, restaurant.url %></h1>
+<h4><%= meeting.created_at.strftime("%B %d, %Y") %> at <%= meeting.time %></h4>
+<hr>
+<%= image_tag restaurant.image %>
 <ul>
 	<li>Cuisine: <%= restaurant.food %></li>
 	<li>Location: <%= restaurant.location %></li>

@@ -4,7 +4,7 @@
   <p>Age: <%= @user.age%></p>
   <p>
     <h4>Acceptance rate: <%= @user.accept_rate %>%</h4>
-    user_presenter.pending_invitation
+    <%= user_presenter.pending_invitation %>
   </p>
   <p>
     <%= link_to 'My Lunches', user_meetings_path(@user) %>
