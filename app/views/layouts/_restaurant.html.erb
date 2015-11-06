@@ -1,10 +1,8 @@
 <div class="col-md-6 text-left">
-<!-- <img src=image width=200px
-    class="img-responsive"> -->
-<%= image_tag restaurant.image %>
+<%= image_tag restaurant.image, class: 'img-responsive', width: '200px' %>
 </div>
 <div class="col-md-6 text-left">
-<h1><%= link_to restaurant.name, restaurant.url %></h1>
+<h3><%= link_to restaurant.name, restaurant.url %></h3>
 <h4><%= meeting.created_at.strftime("%B %d, %Y") %> at <%= meeting.time %></h4>
 <hr>
 <ul>

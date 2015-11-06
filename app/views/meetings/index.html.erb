@@ -3,9 +3,7 @@
 <% @meetings.each do |meeting| %>
   <h4><%= link_to meeting.created_at.strftime("%B %d, %Y"), user_meeting_path(current_user, meeting) %></h4>
   <div class="col-md-6">
-  <!-- <img src=image width=200px
-    class="img-responsive"> -->
-  <%= image_tag meeting.restaurant.image %>
+  <%= image_tag meeting.restaurant.image, class: 'img-responsive', width: '200px' %>
   </div>
    <div class="col-md-6 text-left">
   <p>
