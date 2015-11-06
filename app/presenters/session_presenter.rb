@@ -23,7 +23,7 @@ class SessionPresenter < BasePresenter
     # </li>
     # <% end %>
     if current_user
-      h.content_tag(:li, h.link_to("#{current_user.name.capitalize}'s Profile", route.user_path(current_user))) +
+      h.content_tag(:li, h.link_to("#{current_user.name}'s Profile", route.user_path(current_user))) +
       h.content_tag(:li, h.link_to("Log Out", route.logout_path)) +
       h.content_tag(:li, h.content_tag(:div, :id => "headerpic")  do
         h.image_tag(current_user.image)
