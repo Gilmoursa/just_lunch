@@ -38,7 +38,7 @@ class SessionPresenter < BasePresenter
     if current_user
       # <img src=<%= current_user.image %>>
       # <h3>Welcome back <%= current_user.name %>!</h3>
-      h.link_to(h.image_tag(current_user.image), route.user_path(current_user)) +
+      h.image_tag(current_user.image) +
       h.content_tag(:h3, "Welcome back #{current_user.name}!")
     else
       # <h3><%=link_to "Sign Up", signup_path %> and dine today</h3>
