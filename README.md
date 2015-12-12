@@ -1,61 +1,12 @@
-##TO DO
+##JustLunch
 
-###Welcome
-- sign up ✓
-- login ✓
+###A Ruby on Rails networking app that invites two people in the same neighboorhood to a lunch meeting.
 
-###Profile
-- view invitation ✓
-- view meetings ✓
-- logout ✓
-- add image
+Don't want to have lunch alone?
 
-###Invitations
-- accept ✓
-- reject (triggers other actions such as other invitation is irrelevant) ✓
-- assign ✓
-- logic in accept/reject 
+This web app matches two users by their location and lunch time invites them to have lunch together at a local restaurant.
 
-###Invitation Controller
-- Same lunch / method (time) ✓
-- Same location / method (location) ✓
-- Choose two / pair people up ✓
-- Send invitations / button on the main page ✓
-- link to restaurant is broken ✓
-- image doesnt load (string interpolation error) ✓
-- address is an array ✓
-- phone format correctly ✓
+The Yelp API and gem is used to randomly select a restaurant based on user preferences.
 
-###Controller to make invitations
-- send out invitations to all users ✓
 
-###Meetings
-- view ✓
-- index page - add more information (date, location, user) ✓
-- add image url ✓
-- Meeting ID should be Date & Restaurant
-
-###Restaurants
-- Yelp API gathering information ✓
-
-###Missing Topics
-- authorization (build authorize method)
-- validate (validate presence true)
-- accept/assign or reject invitation ✓
-- view invitations ✓
-- Fix yelp
-   - API Key ✓ 
-   - Setup Adapter - using a GEM instead 
-
-##Future Features
-- Preferences (Tags)
-- Comments
-- Ratings
-- show page - add more information (future add in of comments/ratings)
-- edit page for user information
-
-##Availability
-- Time = 12
-- Zipcode = 10004
-
-<tt>rake doc:app</tt>.
+Created at the Flatiron School with ♥ by [Ho Won Cheng](http://github.com/chenghw), [Austin Gilmour](http://github.com/gilmoursa) and [May Lee](http://github.com/maycmlee)
