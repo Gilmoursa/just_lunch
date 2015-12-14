@@ -1,10 +1,9 @@
 require 'yelp'
 require 'yaml'
 
-keys = YAML.load_file('application.yml')
-  Yelp.client.configure do |config|
-    config.consumer_key = keys['CONSUMER_KEY']
-    config.consumer_secret = keys['CONSUMER_SECRET']
-    config.token = keys['TOKEN']
-    config.token_secret = keys['TOKEN_SECRET']
+Yelp.client.configure do |config|
+	config.consumer_key = ENV['CONSUMER_KEY']
+	config.consumer_secret = ENV['CONSUMER_SECRET']
+	config.token = ENV['TOKEN']
+	config.token_secret = ENV['TOKEN_SECRET']
 end
