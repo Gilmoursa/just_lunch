@@ -1,13 +1,26 @@
-  <h1>Log in</h1>
-	<%= form_tag post_login_path do %>
-    <p>
-	    <%= label_tag :email %> <br>
-	    <%= text_field_tag :email, params[:email] %>
-	  </p>
-		<p>
-		  <%= label_tag :password %> <br>
-		  <%= password_field_tag :password %>
-		</p>
-		<p class="button"><%= submit_tag "Log In"%></p>
-  <% end %>
+<br><br>
+<h1 class='welcome'>Just Lunch</h1>
+</div>
+<div class="row">
+  <br>
+  <div class='col-xs-12 center'>
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4">
+      <legend>Log in</legend>
+      <div class="form-group">
+        <%= form_tag post_login_path, class: 'form-horizontal' do |f| %>
+          <%= label_tag :email %> <br>
+          <%= text_field_tag :email, params[:email], class: "form-control" %><br>
+          <%= label_tag :password %> <br>
+          <%= password_field_tag :password, '', class: "form-control" %><br>
+          <div class="actions">
+            <%= submit_tag "Log In", class: "btn btn-primary"%>
+          </div>
+          <br><%= link_to 'Back', root_path %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-xs-4"></div>
+  </div>
+</div>
 
