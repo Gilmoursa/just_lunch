@@ -8,20 +8,9 @@
 </head>
 <body>
 
- <%= render  "layouts/header" %>
- <div class="cover">
-      <div class="cover-image">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <br><br><br><br><br>
-            <div class="btn btn-white">
-    				<%= yield %>
-    			</div>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
+  <%= render  "layouts/header" %>
+  <div class='new-cover-image'>
+    <%= yield %>
+
 </body>
 </html>

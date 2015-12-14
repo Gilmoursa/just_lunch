@@ -13,5 +13,6 @@
  *= require_self
  *= require just_lunch
  *= require_tree .
- *= require united
+ *= require_tree ../images
+ *= require bootstrap.min.css
  */

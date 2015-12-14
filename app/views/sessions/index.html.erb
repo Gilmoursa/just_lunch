@@ -1,6 +1,43 @@
-<% present(current_user, SessionPresenter) do |session_presenter| %>
-    <h1 class="text">Just Lunch</h1>
-    <br>
-    <%= session_presenter.homepage_text %>
-<% end %>
+<div class='row'>
+  <br><br>
+    <h1 class="welcome">Just Lunch</h1>
+  </div>
+</div>
+<div class="row"><br><br></div>
+<div class='row'>
+  <div class='col-xs-4 text center'>
+    <img src="/assets/person.png" class='person-image' align='middle'>
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+        <h2>Meet someone new for lunch</h2>
+        <p>Form friendships with someone you may have never met with similar interests. We only match you with those within your perference radius.</p>
+      </div>
+      <div class="col-xs-2"></div>
+    </div>
+    
+  </div>
+  <div class='col-xs-4 center'>
+    <img src="/assets/convo.png" class='person-image' align='middle'>
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+        <h2>Talk about things that interst you</h2>
+        <p>Our preference algorithm will match you with those who have similar interests.</p>
+      </div>
+      <div class="col-xs-2"></div>
+    </div>
+  </div>
+  <div class='col-xs-4 center'>
+    <img src="/assets/food.png" class='person-image' align='middle'>
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+        <h2>Cuisine you want</h2>
+        <p>Pulling from the Yelp API, we randomly select a restaurant according to your cuisine preference and location. No more fighting over what to eat. We got you covered.</p>
+      </div>
+      <div class="col-xs-2"></div>
+    </div>
+  </div>
+</div>
 

@@ -13,4 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require united
+//= require_tree ../../../vendor/assets/javascripts/.
