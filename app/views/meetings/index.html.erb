@@ -1,23 +1,37 @@
-<h1>Lunches</h1>
+  <div class='row'>
+    <br><br>
+    <h1 class="welcome">Just Lunch</h1>
+  </div>
+</div>
 
-<% if @meetings.count == 0 %>
-  <h4>Looks like you don't have any lunches...yet.</h4>
-<% end %>
+<div class="row center">
+  <h1><strong>Lunches</strong></h1>
+
+  <% if @meetings.count == 0 %>
+    <h4>Looks like you don't have any lunches...yet.</h4>
+  <% end %>
+</div>
+
 
 <% @meetings.each do |meeting| %>
-  <h4><%= link_to meeting.created_at.strftime("%B %d, %Y"), user_meeting_path(current_user, meeting) %></h4>
-  <div class="col-md-6">
-  <%= image_tag meeting.restaurant.image, class: 'img-responsive', width: '200px' %>
+  <div class="row">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-2">
+      <h4><strong><%= link_to meeting.created_at.strftime("%B %d, %Y"), user_meeting_path(current_user, meeting) %></strong></h4>
+      <%= image_tag meeting.restaurant.image, class: 'img-responsive', width: '175px' %>
+      <p>
+    </div>
+    <div class="col-xs-2 text-right">
+      <h3><u><%= link_to meeting.restaurant.name, meeting.restaurant.url %></u></h3>
+      <% if meeting.status == 'accepted' %>
+        <h4><strong>Guest: </strong><%= meeting.users.where.not(id: params[:user_id]).first.name%></h4>
+      <% end %>
+      <h4><strong>Time: </strong><%= meeting.time %></h4>
+      <h4><strong>Status: </strong><%= meeting.status %></h4>
+      </p>
+      <hr>
+    </div>
+    <div class="col-xs-4"></div>
   </div>
-   <div class="col-md-6 text-left">
-  <p>
-  <%= link_to meeting.restaurant.name, meeting.restaurant.url %><br>
-  <% if meeting.status == 'accepted' %>
-    Guest: <%= meeting.users.where.not(id: params[:user_id]).first.name%><br>
-  <% end %>
-  Time: <%= meeting.time %><br>
-  Status: <%= meeting.status %>
-  </p>
   <hr>
-  </div>
 <% end %>

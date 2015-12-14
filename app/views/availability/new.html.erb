@@ -1,11 +1,24 @@
-<h1>Availabilities</h1>
-
-<%= form_for @availability, url: user_availability_index_path(@user) do |f| %>
-  <%= f.label :time %><br>
-  <%= f.text_field :time %><br>
-  <%= f.label :location %><br>
-  <%= f.text_field :location %><br>
-  <div class="actions">
-    <%= f.submit 'Save' %>
+<br><br>
+<h1 class='welcome'>Just Lunch</h1>
+</div>
+<div class="row">
+  <br>
+  <div class='col-xs-12 center'>
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4">
+      <legend>Availabilities</legend>
+      <div class="form-group">
+        <%= form_for @availability, url: user_availability_index_path(@user), html:{class: 'form-horizontal'} do |f| %>
+          <%= f.label :time %><br>
+          <%= f.text_field :time, class: "form-control" %><br>
+          <%= f.label :location %><br>
+          <%= f.text_field :location, class: "form-control" %><br>
+          <div class="actions">
+            <%= f.submit "Save", class: "btn btn-primary"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-xs-4"></div>
   </div>
-<% end %>
+</div>

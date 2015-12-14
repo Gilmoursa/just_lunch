@@ -12,8 +12,8 @@ class InvitationPresenter < BasePresenter
   # <% end %>
     if invitation.status == 'pending'
       h.form_tag(route.user_invitation_path(invitation.user, invitation), method: :patch) do
-        h.submit_tag('Accept', name: :status) + 
-        h.submit_tag('Decline', name: :status)
+        h.submit_tag('Accept', name: :status, class: "btn btn-primary") + 
+        h.submit_tag('Decline', name: :status, class: "btn btn-danger")
       end
     else
       h.content_tag(:h4, "You chose to #{invitation.status.downcase} this invitation.")

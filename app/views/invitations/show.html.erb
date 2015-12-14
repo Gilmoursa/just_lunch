@@ -1,12 +1,17 @@
 <% present @invitation do |invitation_presenter| %>
-  <h1><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Invitation</h1>
-  <h4>To: <%= @user.name %> </h4>
+  <div class="row center">
+    <br>
+    <%= image_tag @restaurant.image, class: 'img-responsive circle main-profile-img', width: '200px' %>
+  </div>
+</div>
+  <div class="row center">
+    <h1><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Invitation</h1>
+    <h4>To: <%= @user.name %> </h4>
+  </div>
 
   <%= render partial: 'layouts/restaurant', locals: {restaurant: @restaurant, meeting: @meeting } %>
 
-  <div class="col-md-6 text-left">
+  <div class="row center">
     <%= invitation_presenter.accept_decline %>
   </div>
 <% end %>
-
-

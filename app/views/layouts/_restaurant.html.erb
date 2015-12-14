@@ -1,14 +1,9 @@
-<div class="col-md-6 text-left">
-<%= image_tag restaurant.image, class: 'img-responsive', width: '200px' %>
-</div>
-<div class="col-md-6 text-left">
-<h3><%= link_to restaurant.name, restaurant.url %></h3>
-<h4><%= meeting.created_at.strftime("%B %d, %Y") %> at <%= meeting.time %></h4>
-<hr>
-<ul>
-	<li>Cuisine: <%= restaurant.food %></li>
-	<li>Location: <%= restaurant.location %></li>
-	<li>Phone: <%= number_to_phone(restaurant.phone, area_code: true) %></li>
-	<li>Rating: <%= restaurant.rating %> out of 5.</li>
-</ul>
+<div class="row center">
+  <h3><u><%= link_to restaurant.name, restaurant.url %></u></h3>
+  <h4><%= meeting.created_at.strftime("%B %d, %Y") %> at <%= meeting.time %></h4>
+  <hr>
+	<h5><strong>Cuisine: </strong><%= restaurant.food %></h5>
+	<h5><strong>Location: </strong><%= restaurant.location %></h5>
+	<h5><strong>Phone: </strong><%= number_to_phone(restaurant.phone, area_code: true) %></h5>
+	<h5><strong>Rating: </strong><%= restaurant.rating %> out of 5.</h5>
 </div>
