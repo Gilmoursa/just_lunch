@@ -1,4 +1,4 @@
-##JustLunch
+##[JustLunch](https://justlunch.herokuapp.com/)
 
 ###A Ruby on Rails Networking App
 
